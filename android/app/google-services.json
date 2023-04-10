@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "930094904230",
+    "project_id": "peak-ranger-382913",
+    "storage_bucket": "peak-ranger-382913.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930094904230:android:3651a620beba00f0195567",
+        "android_client_info": {
+          "package_name": "com.example.sportbudies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930094904230-bd4o4ts996k8cnts4c152qmhs9hbgkjr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sportbudies",
+            "certificate_hash": "162ebae851110af15a3d1fda331bf8fa8da76705"
+          }
+        },
+        {
+          "client_id": "930094904230-eg7ltroqu832rfv9lgmel9qhr1u96j8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKRtLXI_qwzc-F0EQf55bbVm9DWQCPSnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930094904230-eg7ltroqu832rfv9lgmel9qhr1u96j8e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
