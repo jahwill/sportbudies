@@ -2,8 +2,6 @@ export 'change_password.dart';
 export 'email_verification.dart';
 export 'login.dart';
 export 'signup.dart';
-export 'change_pin_screen.dart';
 export 'verify_phone.dart';
-export 'change_phone_number.dart';
 export 'verify_phone.dart';
 export '../profile/sport_interest.dart';

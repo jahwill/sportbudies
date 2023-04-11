@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> with FormMixin {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             profile.profileDto = profile.profileDto.copyWith(
                 email: auth.user?.email ?? "",
-                phone: auth.user?.phoneNumber ?? "''");
+                phone: auth.signupDto.phoneNumber ?? "''");
           });
           return SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: Insets.l),

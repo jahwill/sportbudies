@@ -1,4 +1,5 @@
-import 'dart:developer';
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/cupertino.dart';
 import 'package:sportbudies/export.dart';
 
@@ -14,16 +15,15 @@ class AuthCmnd extends BaseCommand {
     if (userCredential != null) {
       auth.setUser = userCredential.user!;
       verifyPhone(model.phoneNumber);
-      // contxt.push(EmailVerificationScreen());
       contxt.showInAppNotification('Account created succesfully! ',
           type: InAppNotificationType.success);
 
       // //send mail link
       sendVerifyMailLink(showNotification: false);
-      // log('Sending you email link currently......');
     }
   }
 
+  //log in user
   Future<void> logIn(LoginModel model) async {
     BuildContext contxt = rootNav!.context;
     AuthService service = AuthService();
@@ -34,9 +34,9 @@ class AuthCmnd extends BaseCommand {
       contxt.pushOff(const MainScreen());
       await isUserEmailVerified();
     }
-    // print(userCredential);
   }
 
+  //log out user
   Future<void> logOut() async {
     BuildContext contxt = rootNav!.context;
     AuthService service = AuthService();
@@ -50,9 +50,9 @@ class AuthCmnd extends BaseCommand {
     } else {
       null;
     }
-    // print(userCredential);
   }
 
+  //send an email verification link to user mail box
   Future<void> sendVerifyMailLink({bool showNotification = true}) async {
     AuthService service = AuthService();
     BuildContext contxt = rootNav!.context;
@@ -70,6 +70,7 @@ class AuthCmnd extends BaseCommand {
     }
   }
 
+  //check if user mail is verified
   Future<void> isUserEmailVerified() async {
     BuildContext contxt = rootNav!.context;
     AuthService service = AuthService();
@@ -89,6 +90,7 @@ class AuthCmnd extends BaseCommand {
     }
   }
 
+  //password reset
   Future<void> resetUserPassword(String email,
       {Function()? onSuccessAction}) async {
     BuildContext contxt = rootNav!.context;
@@ -104,15 +106,11 @@ class AuthCmnd extends BaseCommand {
         onSuccessAction();
       }
     } else {
-      // contxt.push(EmailVerificationScreen(
-      //   onClickContinue: () {
-      //     contxt.pop();
-      //   },
-      // ));
       null;
     }
   }
 
+  // change password
   Future<void> changeFireBasePassword(
       {required String email,
       required String password,
@@ -133,6 +131,7 @@ class AuthCmnd extends BaseCommand {
     }
   }
 
+  //verify phone
   Future<void> verifyPhone(String phoneNumber) async {
     BuildContext contxt = rootNav!.context;
     int? _resendToken;

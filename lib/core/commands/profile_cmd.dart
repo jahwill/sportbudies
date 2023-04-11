@@ -18,7 +18,11 @@ class ProfileCmd extends BaseCommand {
 
     if (res == "User-profile-created-successfully!".trim()) {
       updateUserProfile(newPhoneNumber: model.phone);
-
+      updateSingleField(
+        "profile.phone",
+        profile.profileDto.phone,
+        auth.user as User,
+      );
       contxt.showInAppNotification("User profile created successfully!",
           type: InAppNotificationType.success);
       contxt.pushOff(const MainScreen());

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sportbudies/export.dart';
-import 'package:sportbudies/routes/auth/auth.dart';
 import 'package:sportbudies/routes/intro/intro_screen.dart';
-import 'package:sportbudies/routes/mainscreen/main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,22 +30,7 @@ class MyApp extends StatelessWidget {
         navigatorKey: R.N.navKey,
         title: 'Sport buddies',
         theme: theme.themeData,
-        // home: FutureBuilder(
-        //     future: _fbApp,
-        //     builder: (BuildContext context, snapshot) {
-        //       if (snapshot.hasError) {
-        //         return Text(
-        //           'Firebase initialization has crashed',
-        //           style: TextStyles.body1,
-        //         );
-        //       } else if (snapshot.hasData) {
-        //         return const LogInScreen();
-        //       } else {
-        //         return Center(child: const CircularProgressIndicator());
-        //       }
-        //     }),
-
-        home: IntroScreen(),
+        home: const IntroScreen(),
         builder: (context, child) => MediaQuery(
           data: context.widthPx < 600
               ? context.mq.copyWith(textScaleFactor: .8)

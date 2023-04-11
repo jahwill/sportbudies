@@ -114,7 +114,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                         ),
                         const VSpace(18),
                         Text(
-                          profile.firstName + profile.lastName,
+                          "${profile.firstName}  ${profile.lastName}",
                           style: TextStyles.body1.copyWith(
                               fontWeight: FontWeight.w700, color: Colors.white),
                         ),
@@ -165,9 +165,11 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                               maxWidth: 400,
                               minWidth: context.widthPx),
 
-                          child: Text(
-                            profile.bio,
-                            style: TextStyles.body1,
+                          child: SingleChildScrollView(
+                            child: Text(
+                              profile.bio,
+                              style: TextStyles.body1,
+                            ),
                           ),
                         ),
                         const VSpace(15.0),
@@ -270,6 +272,7 @@ class _UserProfileScreenState extends State<UserProfileScreen>
                           children: [
                             CustomFormTextInput(
                               readOnly: true,
+                              fieldHeight: 55,
                               // initialValue: profile.interest.join('*'),
                               controller: interestController,
                               prefix: Row(
@@ -414,7 +417,8 @@ class _UpdateBioCoverPageState extends State<UpdateBioCoverPage>
                               profile.profileDto.bio,
                               auth.user as User, onSuccessUpdate: () {
                             context.showInAppNotification(
-                                'Cover profile updated successfully!');
+                                'Cover profile updated successfully!',
+                                type: InAppNotificationType.success);
                           }));
                     });
                   },

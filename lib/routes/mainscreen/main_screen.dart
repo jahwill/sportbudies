@@ -28,8 +28,7 @@ class _MainScreenState extends State<MainScreen> {
         await AnimatedAlertModal.showEmptyModal(context,
             title: 'Are you sure you want to logout ?',
             titleStyle: TextStyles.body2.copyWith(
-                fontWeight: FontWeight.w600,
-                color: const Color(0xFF1D43FE)),
+                fontWeight: FontWeight.w600, color: const Color(0xFF1D43FE)),
             showIcon: false,
             body: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,8 +38,7 @@ class _MainScreenState extends State<MainScreen> {
                   child: Text(
                     'No',
                     style: TextStyles.body3.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: theme.black),
+                        fontWeight: FontWeight.w600, color: theme.black),
                   ),
                 ),
                 const HSpace(90),
@@ -48,13 +46,11 @@ class _MainScreenState extends State<MainScreen> {
                   onPressed: () async {
                     Navigator.of(context).pop();
                     await AuthCmnd(context).logOut();
-
-
                   },
                   child: Text(
                     'Yes',
-                    style: TextStyles.body3
-                        .copyWith(fontWeight: FontWeight.w600),
+                    style:
+                        TextStyles.body3.copyWith(fontWeight: FontWeight.w600),
                   ),
                 ),
               ],
@@ -86,7 +82,7 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                 ),
               ),
-              SettingsScreen()
+              const SettingsScreen()
             ],
           );
         }),

@@ -173,6 +173,7 @@ class CustomFormTextInput extends StatefulWidget {
   final bool isRequired;
   final Widget? prefix;
   final Widget? suffix;
+  final double fieldHeight;
   final List<TextInputFormatter>? formatter;
   final String? Function(String?)? validator;
 
@@ -184,6 +185,7 @@ class CustomFormTextInput extends StatefulWidget {
     this.onChange,
     this.onSaved,
     this.hintText,
+    this.fieldHeight = 48,
     this.readOnly = false,
     this.onFocusChanged,
     this.onFocusCreated,
@@ -223,7 +225,7 @@ class _CustomFormTextInputState extends State<CustomFormTextInput> {
               color: _error == null
                   ? theme.cyan.withOpacity(0.1)
                   : theme.redButton)),
-      height: 48,
+      height: widget.fieldHeight,
       child: Stack(
         children: [
           Padding(

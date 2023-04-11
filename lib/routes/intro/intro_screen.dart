@@ -44,7 +44,7 @@ class _IntroScreenState extends State<IntroScreen> {
               GlassText(
                 text: 'Sport Buddy',
                 fontSize: 12,
-                color: theme.primary, //
+                color: theme.primary,
               )
             ],
           ),
